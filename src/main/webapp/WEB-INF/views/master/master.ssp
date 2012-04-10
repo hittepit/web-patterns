@@ -1,5 +1,6 @@
 <% import bo.Item %>
 <%@ var items:List[Item] %>
+<% attributes("title")= "Liste des items " %>
 
 <table>
 	<tr>

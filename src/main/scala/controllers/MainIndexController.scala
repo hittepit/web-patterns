@@ -5,6 +5,6 @@ import org.scalatra.scalate.ScalateSupport
 class MainIndexController extends ScalatraFilter with ScalateSupport{
   get("/"){
     contentType="text/html"
-    layoutTemplate("main")
+    layoutTemplate("main","layout"->"/WEB-INF/views/layout.ssp")
   }
 }

@@ -1,0 +1,27 @@
+<%@ var body: String %>
+<%@ var title: String = "Some Default Title" %>
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>${title}</title>
+
+<link type="text/css" rel="stylesheet" href="/css/styles.css" />
+
+</head>
+
+<body>
+		<header>
+				<nav>
+				Démonstration de patterns web
+				<ul id="navigation">
+				  <li><a href="/master/item/" title="Modules">Master-detail</a></li>
+				  <li><a href="#" title="Modules">autres</a></li>
+				</ul>
+				</nav>
+		</header>
+		<div id="corpus">
+		${unescape(body)}
+		</div>
+		<footer><a href="/">Acceuil</a></footer>
+</body>

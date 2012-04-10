@@ -1,3 +1,5 @@
+<% attributes("title")="Démonstration de patterns web" %>
+
 <h1>Démonstration de patterns Web</h1>
 <p>L'objectif de cet application est de mettre en place certains patterns courant trouvé dans une application Web.</p>
 <p>Ce projet est développé en Scala avec Scalatra. Néanmoins, la résolution des patterns est portable dans la plupart des langages et frameworks de présentation.</p>

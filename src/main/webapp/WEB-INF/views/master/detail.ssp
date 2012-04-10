@@ -1,5 +1,7 @@
 <% import bo.Item %>
 <%@ var item:Item %>
+<% attributes("title")= "Détails de l'item "+item.name %>
+
 
 <h1>${item.name}</h1>
 <b>Price: </b>${item.price}<br />
