@@ -1,0 +1,15 @@
+<% import bo.Item %>
+<%@ var items:List[Item] %>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+#for(item <- items)
+	<tr>
+		<td><a href="/master/item/${item.id}">${item.name}</a></td>
+		<td>${item.price}</td>
+	</tr>
+#end
+</table>

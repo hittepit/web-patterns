@@ -1,0 +1,12 @@
+<h1>Démonstration de patterns Web</h1>
+<p>L'objectif de cet application est de mettre en place certains patterns courant trouvé dans une application Web.</p>
+<p>Ce projet est développé en Scala avec Scalatra. Néanmoins, la résolution des patterns est portable dans la plupart des langages et frameworks de présentation.</p>
+<h2>Patterns</h2>
+<h3><a href="/master/">Master-detail</a></h3>
+<p>Pattern courant qui part d'une liste d'items pour afficher le détail de l'un deux, puis du détail permet de revenir à mla liste.</p>
+<p>C'est un pattern de base qui est utilisé dans de nombreux autres et connaît des variations.</p>
+<b>Variations</b>
+<ul>
+	<li>Résultats de recherche</li>
+	<li>Table paginée</li>
+</ul>

@@ -1,0 +1,6 @@
+<% import bo.Item %>
+<%@ var item:Item %>
+
+<h1>${item.name}</h1>
+<b>Price: </b>${item.price}<br />
+<b>Available: </b>${item.availabilityDate}<br />
