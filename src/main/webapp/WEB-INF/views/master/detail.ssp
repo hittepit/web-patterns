@@ -2,7 +2,17 @@
 <%@ var item:Item %>
 <% attributes("title")= "Détails de l'item "+item.name %>
 
+<h1>Page de détail</h1>
+<p>Ceci est la page de détail de l'élément sélectionné. Elle permet de naviguer vers la liste (le master).</p>
+<p>Le détail correspond en fait à une ressource et l'url utilisée la représente de manière univoque et constante. Autrement dit, il est possible de la bookmarker et, sous
+réserve que la ressource ne soit pas supprimée, il sera toujours possible d'y accéder via la même url.</p>
 
-<h1>${item.name}</h1>
-<b>Price: </b>${item.price}<br />
-<b>Available: </b>${item.availabilityDate}<br />
+
+<h2>${item.name}</h2>
+<ul>
+	<li><b>Price: </b>${item.price}</li>
+	<li><b>Available: </b>${item.availabilityDate}</li>
+</ul>
+
+<p>A noter qu'il est nécessaire de prévoir une page particulière si l'identifiant demandé n'existe pas (essayez <a href="/master/items/100000">ceci</a> qui normalement n'existe pas)</p>
+<a href="/master/items/">Retour au master</a>

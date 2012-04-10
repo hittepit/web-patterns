@@ -1,2 +1,5 @@
 <% attributes("title")= "Item inexistant" %>
-No corresponding item
+
+<h1>No corresponding item</h1>
+
+<a href="/master/items/">Retour au master</a>

@@ -2,15 +2,26 @@
 <%@ var items:List[Item] %>
 <% attributes("title")= "Liste des items " %>
 
-<table>
+<h1>Master-detail</h1>
+<p>C'est un pattern de base qui contient deux pages:
+<ul>
+	<li>le <i>master</i>: une page qui présente une collection d'informations</li>
+	<li>le <i>detail</i>: une page qui présente le détail d'une information</li>
+</ul>
+</p>
+
+<p>Depuis la page <i>master</i>, il est possible de naviguer vers le détail d'un élément en cliquant sur un lien (ici le nom).</p>
+<p>Le paramètre utilisé pour naviguer vers le détail est un clé (ici, une clé primaire) permettant de définir de manière univoque un élément (une ressource).</p>
+
+<table class="box">
 	<tr>
 		<th>Name</th>
 		<th>Price</th>
 	</tr>
 #for(item <- items)
 	<tr>
-		<td><a href="/master/item/${item.id}">${item.name}</a></td>
-		<td>${item.price}</td>
+		<td><a href="/master/items/${item.id}">${item.name}</a></td>
+		<td>${item.price} €</td>
 	</tr>
 #end
 </table>
