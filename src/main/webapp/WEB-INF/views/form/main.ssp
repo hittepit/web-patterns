@@ -1,0 +1,38 @@
+<% attributes("title")="Formulaires" %>
+<h1>Patterns liés aux formualires</h1>
+<p>D'une manière générale, les formulaires sont utilisés pour permettre à l'utilisateur d'envoyer des informations vers le serveur.
+Plus précisément pour:
+<ol>
+	<li>entrer de nouvelles données (créations d'entités)</li>
+	<li>modifier des données existantes</li>
+	<li>rechercher des données en fonction de différents critères</li>
+</ol>
+</p>
+
+<p>D'une manière générale, les cas 1 et 2 se ressemblent très fort. Tous deux entraînent une modification des données. Le cas 3 est différent car il ne modifie pas les données. Il sera étudié ailleurs (TODO).</p>
+
+<p>Plusieurs patterns de formulaires création/édition sont étudiés ici:
+<ul>
+	<li>formulaire simple</li>
+	<li>formulaire de sauvegarde</li>
+	<li>formulaire en popup</li>
+	<li>wizards</li>
+</ul>
+
+<h2>Formulaire simple</h2>
+<p>Le point de départ: un formulaire est affiché, soit pour ajouter un nouvel élément, soit pour éditer un élément existant.</p>
+<h3>Création</h3>
+<p>L'utilisateur clique sur un bouton, un lien... pour ajouter un nouvel élément. <a href="/form/item/create">Par exemple, cliquez ici</a></p>
+ (création ou édition)
+Le formulaire est affiché (l'url décrit la ressource éditée si édition), le serveur fait toujours une validation (le JS en plus éventuellement), en cas d'erreur le formulaire est réaffiché avec les erreurs sinon redirect vers une autre page (typiquement, liste d'éléments, détails de l'élément ajouté/modifié). Les modifications sont envoyées en post.
+
+<h2>Sauvegarde (peut coexister avec le précédent)</h2>
+Le formulaire est affiché normalement (l'url décrit la ressource éditée si nécessaire), mais le submit (save) envoie les données vers le serveur pour les sauver (avec ou sans validation) et l'utilisateur reste sur le formulaire. Deux possibilités:
+formulaire simple, ce qui signifie que le formulaire est réaffiché après le post des modifications (mais url décrivant la ressource => c'est la solution la plus simple pour avoir une url si on crée une nouvelle ressource, qu'on la sauve pour continuer à l'éditer).
+formulaire ajax (voir formulaire ajax en popup)
+Dans les deux cas (et de toute façon dans le deuxième), il est utile de placer un symbole indiquant à l'utilisateur que la sauvegarde est en cours ("waiting", "loading", "saving"...) et qui disparaît lorsque c'est fait.
+
+<h2>Formulaire en popup</h2>
+Le formulaire s'affiche depuis une page en pop-up. L'url du formulaire n'est pas significative, mais il peut être intéressant qu'elle décrive la ressource éditée (en cas d'url hacking par l'utilisateur).
+
+<h2>wizard</h2>

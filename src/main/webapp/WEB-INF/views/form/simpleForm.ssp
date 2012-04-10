@@ -1,0 +1,49 @@
+<% attributes("title") = "Création d'un nouvel item" %>
+
+<%@ var errors:Map[String,String] %>
+<%@ var name:String %>
+<%@ var price:String %>
+<%@ var date:String %>
+
+<h1>Création d'un nouvel item</h1>
+<form>
+	<table>
+		<tr>
+			<td>Nom: </td>
+			<td><input type="text" name="name" value="${name}"/></td>
+			<td>
+			#if(errors.contains("name"))
+			${errors("name")}
+			#else
+			&nbsp;
+			#end
+			</td>
+		</tr>
+		<tr>
+			<td>Prix: </td>
+			<td><input type="text" name="price" value="${price}"/></td>
+			<td>
+			#if(errors.contains("price"))
+			${errors("price")}
+			#else
+			&nbsp;
+			#end
+			</td>
+		</tr>
+		<tr>
+			<td>Date (JJ/MM/AAAA): </td>
+			<td><input type="text" name="date" value="${date}"/></td>
+			<td>
+			#if(errors.contains("date"))
+			${errors("date")}
+			#else
+			&nbsp;
+			#end
+			</td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Sauver" /></td>
+			<td><input type="submit" value="Annuler" /></td>
+			<td>&nbsp;</td>
+	</table>
+</form>

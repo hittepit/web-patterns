@@ -4,6 +4,11 @@ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
 	<filter>
+		<filter-name>form</filter-name>
+		<filter-class>controllers.FormController</filter-class>
+	</filter>
+
+	<filter>
 		<filter-name>master</filter-name>
 		<filter-class>controllers.MasterController</filter-class>
 	</filter>
@@ -12,6 +17,11 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 		<filter-name>main</filter-name>
 		<filter-class>controllers.MainIndexController</filter-class>
 	</filter>
+	
+	<filter-mapping>
+		<filter-name>form</filter-name>
+		<url-pattern>/form/*</url-pattern>
+	</filter-mapping>
 	
 	<filter-mapping>
 		<filter-name>master</filter-name>

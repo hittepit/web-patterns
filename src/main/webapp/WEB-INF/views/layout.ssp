@@ -15,8 +15,8 @@
 				<nav>
 				Démonstration de patterns web
 				<ul id="navigation">
-				  <li><a href="/master/items/" title="Modules">Master-detail</a></li>
-				  <li><a href="#" title="Modules">autres</a></li>
+				  <li><a href="/master/items/" title="Master-Detail">Master-detail</a></li>
+				  <li><a href="/form/" title="Forms">Formulaires</a></li>
 				</ul>
 				</nav>
 		</header>
