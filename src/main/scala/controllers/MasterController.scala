@@ -1,7 +1,7 @@
 package controllers
 import org.scalatra.scalate.ScalateSupport
 import org.scalatra.ScalatraFilter
-import managers.ItemDao
+import managers.ItemManager
 
 class MasterController extends ScalatraFilter with ScalateSupport {
 	before(){
@@ -17,11 +17,11 @@ class MasterController extends ScalatraFilter with ScalateSupport {
 	}
 	
 	get("/master/items/"){
-		layoutTemplate("master/master","layout"->"/WEB-INF/views/layout.ssp","items"->ItemDao.findAll.toList)
+		layoutTemplate("master/master","layout"->"/WEB-INF/views/layout.ssp","items"->ItemManager.findAll.toList)
 	}
 	
 	get("/master/items/:id"){
-	  ItemDao.find(params("id").toInt) match{
+	  ItemManager.find(params("id").toInt) match{
 	    case Some(item) =>	  layoutTemplate("master/detail","layout"->"/WEB-INF/views/layout.ssp","item"->item)
 	    case None => 	  layoutTemplate("master/nodetail","layout"->"/WEB-INF/views/layout.ssp")
 	  }

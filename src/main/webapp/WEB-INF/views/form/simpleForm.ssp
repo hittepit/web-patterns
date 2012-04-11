@@ -29,7 +29,7 @@ Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire
 			<td><input type="text" name="name" value="${name}"/></td>
 			<td>
 			#if(errors.contains("name"))
-			${errors("name")}
+			<span class="erreur">${errors("name")}</span>
 			#else
 			&nbsp;
 			#end
@@ -40,7 +40,7 @@ Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire
 			<td><input type="text" name="price" value="${price}"/></td>
 			<td>
 			#if(errors.contains("price"))
-			${errors("price")}
+			<span class="erreur">${errors("price")}</span>
 			#else
 			&nbsp;
 			#end
@@ -51,7 +51,7 @@ Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire
 			<td><input type="text" name="date" value="${date}"/></td>
 			<td>
 			#if(errors.contains("date"))
-			${errors("date")}
+			<span class="erreur">${errors("date")}</span>
 			#else
 			&nbsp;
 			#end
@@ -59,7 +59,7 @@ Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire
 		</tr>
 		<tr>
 			<td><input type="submit" value="Sauver" /></td>
-			<td><button>Annuler</button></td>
+			<td><button onclick="window.location.href='/form/';return false;">Annuler</button></td>
 			<td>&nbsp;</td>
 	</table>
 </form>

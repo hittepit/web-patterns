@@ -1,8 +1,9 @@
 package controllers
 import org.scalatra.scalate.ScalateSupport
 import org.scalatra.ScalatraFilter
-import managers.ItemDao
 import java.util.Date
+import bo.Item
+import managers.ItemManager
 
 class FormController extends ScalatraFilter with ScalateSupport {
 	before(){
@@ -33,6 +34,8 @@ class FormController extends ScalatraFilter with ScalateSupport {
 		      "price" -> price,
 		      "date" -> date)
 		} else {
+			val item = new Item(name,price.toDouble,new Date(date))
+			ItemManager.save(item)
 			redirect("/form/")
 		}
 	}
@@ -41,7 +44,7 @@ class FormController extends ScalatraFilter with ScalateSupport {
 		var errors = Map[String,String]()
 		if(name==null || name == ""){
 		  errors += "name"->"Le nom de ne peut pas être vide"
-		} else if(ItemDao.exists(name)){
+		} else if(ItemManager.exists(name)){
 		  errors += "name"->"Ce nom existe déjà"
 		}
 		if(price == null || price == ""){
