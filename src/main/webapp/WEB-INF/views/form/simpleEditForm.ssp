@@ -1,0 +1,57 @@
+<% attributes("title") = "Edition d'un item" %>
+
+<%@ var errors:Map[String,String] %>
+<%@ var name:String %>
+<%@ var price:String %>
+<%@ var date:String %>
+<%@ var id:String %>
+
+<h1>Formulaire d'édition d'un élément existant</h1>
+<p>Ce formulaire est le même que pour la création d'un nouvel élément, sauf qu'il est initialisé avec les données
+de l'élément sélectionné.</p>
+<p>Son fonctionnement est identique à l'exception d'un détail d'importance: l'id de l'élément (du moins une clé unique)
+doit être transmis lors de la requête. Souvent, cet id est un champ cache (hidden) dans le formulaire. Il peut aussi faire partie
+des paramètres de l'url de submit (ce qui est cas ici).</p>
+
+<h2>Edition d'un item</h2>
+<form action="/form/item/edit/${id}" method="post">
+	<table>
+		<tr>
+			<td>Nom: </td>
+			<td><input type="text" name="name" value="${name}"/></td>
+			<td>
+			#if(errors.contains("name"))
+			<span class="erreur">${errors("name")}</span>
+			#else
+			&nbsp;
+			#end
+			</td>	
+		</tr>
+		<tr>
+			<td>Prix: </td>
+			<td><input type="text" name="price" value="${price}"/></td>
+			<td>
+			#if(errors.contains("price"))
+			<span class="erreur">${errors("price")}</span>
+			#else
+			&nbsp;
+			#end
+			</td>
+		</tr>
+		<tr>
+			<td>Date (JJ/MM/AAAA): </td>
+			<td><input type="text" name="date" value="${date}"/></td>
+			<td>
+			#if(errors.contains("date"))
+			<span class="erreur">${errors("date")}</span>
+			#else
+			&nbsp;
+			#end
+			</td>
+		</tr>
+		<tr>
+			<td><input type="submit" value="Sauver" /></td>
+			<td><button onclick="window.location.href='/form/';return false;">Annuler</button></td>
+			<td>&nbsp;</td>
+	</table>
+</form>

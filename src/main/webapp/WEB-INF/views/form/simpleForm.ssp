@@ -22,7 +22,7 @@ validation finale.</p>
 Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire reste affiché en post.</p>
 
 <h2>Création d'un nouvel item</h2>
-<form action=""/form/item/create/" method="post">
+<form action="/form/item/create/" method="post">
 	<table>
 		<tr>
 			<td>Nom: </td>

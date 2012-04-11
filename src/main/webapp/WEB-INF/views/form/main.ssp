@@ -1,3 +1,6 @@
+<% import bo.Item %>
+<%@ var items:List[Item] %>
+
 <% attributes("title")="Formulaires" %>
 <h1>Patterns liés aux formualires</h1>
 <p>D'une manière générale, les formulaires sont utilisés pour permettre à l'utilisateur d'envoyer des informations vers le serveur.
@@ -22,11 +25,41 @@ Plus précisément pour:
 <h2>Formulaire simple</h2>
 <p>Le point de départ: un formulaire est affiché, soit pour ajouter un nouvel élément, soit pour éditer un élément existant.</p>
 <h3>Création</h3>
-<p>L'utilisateur clique sur un bouton, un lien... pour ajouter un nouvel élément. <a href="/form/item/create/">Par exemple, cliquez ici</a></p>
- (création ou édition)
-Le formulaire est affiché (l'url décrit la ressource éditée si édition), le serveur fait toujours une validation (le JS en plus éventuellement), en cas d'erreur le formulaire est réaffiché avec les erreurs sinon redirect vers une autre page (typiquement, liste d'éléments, détails de l'élément ajouté/modifié). Les modifications sont envoyées en post.
+<p>L'utilisateur clique sur un bouton, un lien... pour ajouter un nouvel élément. <a href="/form/item/create/">Par exemple, cliquez ici</a> ou après le "master" plus bas.</p>
+<h3>Edition</h3>
+<p>L'utilisateur crée sur un lien associé à un item pour le modifier. Ca ressemble au master detail sauf que le detail est un formulaire.</p>
+<h3>Point de départ (master)</h3>
 
-<h2>Sauvegarde (peut coexister avec le précédent)</h2>
+<table class="box">
+	<tr>
+		<th>&nbsp;</th>
+		<th>Name</th>
+		<th>Price</th>
+	</tr>
+#for(item <- items)
+	<tr>
+		<td><a href="/form/item/edit/${item.id}">Editer</a></td>
+		<td><a href="#" tooltip="toto">${item.name}</a></td>
+		<td>${item.price} €</td>
+	</tr>
+#end
+</table>
+<a href="/form/item/create/">Créer un nouvel item</a>
+
+<h2>Formulaire avec sauvegarde temporaire</h2>
+<p>Le formulaire est affiché. Il permet de modifier ou d'ajouter des données, mais surtout il permet de sauvegarder l'avancement sans quitter
+le formulaire (c'est ce qui se passe avec un traitement de texte où la sauvegarde ne ferme pas la fenêtre.</p>
+<p>A noter que ce type de formuaire peut coexister avec le précédent.</p>
+<p>Points d'attention:
+	<ul>
+		<li>les données sauvegardées doivent être stockées temporairement et pouvoir être récupérées par la suite si
+			jamais le formulaire est quitté</li>
+		<li>la sauvegarde des données peut s'effectuer de différentes manières (session, db...)</li>
+		<li>les données sauvegardées peuvent ne pas être valides =&gt; elles ne sont pas validées</li>
+		<li>pour indiquer à l'utilisateur que ses données sont sauvegardées, il est utile de placer un bouton loading</li>
+		<li>il est utile de désactiver la sauvegarde tant qu'une sauvegarde est en cours</li>
+	</ul>
+</p>
 Le formulaire est affiché normalement (l'url décrit la ressource éditée si nécessaire), mais le submit (save) envoie les données vers le serveur pour les sauver (avec ou sans validation) et l'utilisateur reste sur le formulaire. Deux possibilités:
 formulaire simple, ce qui signifie que le formulaire est réaffiché après le post des modifications (mais url décrivant la ressource => c'est la solution la plus simple pour avoir une url si on crée une nouvelle ressource, qu'on la sauve pour continuer à l'éditer).
 formulaire ajax (voir formulaire ajax en popup)
