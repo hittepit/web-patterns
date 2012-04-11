@@ -19,4 +19,6 @@ object ItemDao {
 	} catch {
 	  case _=> None
 	}
+	
+	def exists(name:String) = db.exists((el:(Int,Item)) => el._2.name==name)
 }

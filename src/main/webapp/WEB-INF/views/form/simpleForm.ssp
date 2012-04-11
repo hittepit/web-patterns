@@ -5,8 +5,24 @@
 <%@ var price:String %>
 <%@ var date:String %>
 
-<h1>Création d'un nouvel item</h1>
-<form>
+<h1>Formulaire de création d'un nouvel élément</h1>
+<p>Le formulaire suivant est un formulaire simple. Il ne fait aucune validation Javascript. La validation est
+exclusivement faite du côté serveur (à noter que validation Javascript ou non, le serveur doit toujours effectuer la 
+validation finale.</p>
+<p>Les éléments clés du fonctionnement de ce formulaire sont le suivant:
+	<ul>
+		<li>le bouton "Sauver" (type="submit") provoque l'envoi du formulaire en post</li>
+		<li>le serveur valide les données et renvoie, soit le formulaire avec des messages d'erreurs s'il
+		y a des erreurs de validation, soit un redirect vers un page générale (typiquement, le master ou un detail, ici
+		la page de base d'explication des formualire</li>
+		<li>le bouton "Annuler" renvoie vers la même page que ci-dessus</li>
+	</ul>
+</p>
+<p>Important: après un submit, il doit y avoir un redirect vers une url décrivant de manière univoque une ressource.
+Une exception: lorsqu'il y a des erreurs de validation, auquel cas le formualire reste affiché en post.</p>
+
+<h2>Création d'un nouvel item</h2>
+<form action=""/form/item/create/" method="post">
 	<table>
 		<tr>
 			<td>Nom: </td>
@@ -43,7 +59,7 @@
 		</tr>
 		<tr>
 			<td><input type="submit" value="Sauver" /></td>
-			<td><input type="submit" value="Annuler" /></td>
+			<td><button>Annuler</button></td>
 			<td>&nbsp;</td>
 	</table>
 </form>

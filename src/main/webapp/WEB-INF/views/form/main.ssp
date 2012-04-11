@@ -22,7 +22,7 @@ Plus précisément pour:
 <h2>Formulaire simple</h2>
 <p>Le point de départ: un formulaire est affiché, soit pour ajouter un nouvel élément, soit pour éditer un élément existant.</p>
 <h3>Création</h3>
-<p>L'utilisateur clique sur un bouton, un lien... pour ajouter un nouvel élément. <a href="/form/item/create">Par exemple, cliquez ici</a></p>
+<p>L'utilisateur clique sur un bouton, un lien... pour ajouter un nouvel élément. <a href="/form/item/create/">Par exemple, cliquez ici</a></p>
  (création ou édition)
 Le formulaire est affiché (l'url décrit la ressource éditée si édition), le serveur fait toujours une validation (le JS en plus éventuellement), en cas d'erreur le formulaire est réaffiché avec les erreurs sinon redirect vers une autre page (typiquement, liste d'éléments, détails de l'élément ajouté/modifié). Les modifications sont envoyées en post.
 
