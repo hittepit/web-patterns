@@ -1,0 +1,28 @@
+-@ var body: String
+-@ var title: String = "Patterns Web"
+
+html
+	head
+		meta(http-equiv="Content-Type",content="text/html; charset=utf-8")
+
+		title ${title}
+
+<link type="text/css" rel="stylesheet" href="/css/styles.css" />
+
+</head>
+
+<body>
+		<header>
+				<nav>
+				Démonstration de patterns web
+				<ul id="navigation">
+				  <li><a href="/master/items/" title="Master-Detail">Master-detail</a></li>
+				  <li><a href="/form/" title="Forms">Formulaires</a></li>
+				</ul>
+				</nav>
+		</header>
+		<div id="corpus">
+		${unescape(body)}
+		</div>
+		<footer><a href="/">Acceuil</a></footer>
+</body>

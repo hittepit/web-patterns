@@ -1,0 +1,35 @@
+- import bo.Item
+-@ val items:List[Item]
+- attributes("title")= "Liste des items "
+
+h1 Master-detail
+
+p C'est un pattern de base qui contient deux pages:
+ul
+	li 
+		|le 
+		i master:
+		|une page qui présente une collection d'informations
+	li 
+		|le 
+		i detail:
+		|une page qui présente le détail d'une information
+
+p 
+	|Depuis la page 
+	i master,
+	|il est possible de naviguer vers le détail d'un élément en cliquant sur un lien (ici le nom).
+p 
+	|Le paramètre utilisé pour naviguer vers le détail est un clé (ici, une clé primaire)
+	|permettant de définir de manière univoque un élément (une ressource).
+
+table.box
+	tr
+		th Name
+		th Price
+
+	- for(item <- items)
+		tr
+			td 
+				a(href="/master/items/#{item.id}") #{item.name}
+			td #{item.price} €
