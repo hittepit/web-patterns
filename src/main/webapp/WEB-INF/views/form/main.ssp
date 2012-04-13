@@ -66,6 +66,7 @@ formulaire ajax (voir formulaire ajax en popup)
 Dans les deux cas (et de toute façon dans le deuxième), il est utile de placer un symbole indiquant à l'utilisateur que la sauvegarde est en cours ("waiting", "loading", "saving"...) et qui disparaît lorsque c'est fait.
 
 <h2>Formulaire en popup</h2>
+<a href="/form/popup/">Tester</a>
 Le formulaire s'affiche depuis une page en pop-up. L'url du formulaire n'est pas significative, mais il peut être intéressant qu'elle décrive la ressource éditée (en cas d'url hacking par l'utilisateur).
 
 <h2>wizard</h2>

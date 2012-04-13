@@ -76,7 +76,12 @@ class FormController extends ScalatraFilter with ScalateSupport {
 			ItemManager.save(item)
 			redirect("/form/")
 		}
-	}	
+	}
+	
+	get("/form/popup/"){
+	  layoutTemplate("/form/main-popup","layout" -> "/WEB-INF/views/layout.ssp","items" -> ItemManager.findAll.toList)
+	}
+	
 	def validate(name:String,price:String,date:String) = {
 		var errors = Map[String,String]()
 		if(name==null || name == ""){

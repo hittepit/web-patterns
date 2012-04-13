@@ -1,0 +1,32 @@
+- attributes("title")="Utilisation d'un formulaire popup"
+- import bo.Item
+-@ var items:List[Item]
+
+:javascript
+	function openDlg(){
+		alert("hello")
+	}
+
+h1 Utilisation de formulaires popup
+
+p 
+	| Lorsque l'utilisateur demande la création d'un nouvel item ou l'édition d'un item existant (tester aussi
+	| l'item non existant) une fenêtre popup s'ouvre.
+
+p
+	| Le submit modifie directement la page (autre possibilité, le submit réussi réaffiche la page)
+
+
+table.box
+	tr
+		th &nbsp
+		th Name
+		th Price
+
+	- for(item <- items)
+		tr
+			td Edit
+			td #{item.name}
+			td #{item.price} €
+			
+a(href="#" onclick="openDlg();return false;") Ajouter un item
